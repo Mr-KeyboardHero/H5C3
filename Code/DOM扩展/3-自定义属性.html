@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>自定义属性</title>
+    <style>
+        a[data-cont="global"] {
+            color: red;
+        }
+    </style>
+</head>
+
+<body>
+    <nav>
+        <a href="javascript:;" data-cont="local" class="active" index="2">国内新闻</a>
+        <a href="javascript:;" data-cont="global">国际新闻</a>
+        <a href="javascript:;" data-cont="sports">体育新闻</a>
+        <a href="javascript:;" data-cont="funny">娱乐新闻</a>
+        <!-- 自定义属性的规范格式: data-*   ( *  代表任意自定义字符) -->
+        <a href="javascript:;" data-name="佟丽娅" data-small-name="yaya" data-zhen-height-cc= "1.7" >佟丽娅</a>
+    </nav>
+    <script>
+        var lastA =document.querySelector("a:last-child");
+        // console.log(lastA);
+        // 通过js获取自定义属性的值
+        // var name =  lastA.dataset.name;
+        // console.log(name);
+
+        // var smallName = lastA.dataset.smallname; 这是错误的
+        // var smallName = lastA.dataset.smallName; 这是对的
+        // console.log(smallName);
+
+        // console.log(lastA.dataset.zhenHeightCc);
+
+        // 通过js去设置自定义属性及其值
+        // var firstA = document.querySelector("a");
+        // firstA.dataset.news = "国内新闻";// 在标签中看到data-news="国内新闻"
+
+
+    </script>
+</body>
+
+</html>
