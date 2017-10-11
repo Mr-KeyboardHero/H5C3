@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>地理定位</title>
+</head>
+<body>
+  <script>
+    // 1.geolocation 不是所有浏览器都支持  ie 低版本浏览器都不支持
+
+
+    // 1.判断浏览器是否支持地理定位功能
+    if(navigator.geolocation){
+    // 2.获取地理定位信息 getCurrentPosition 
+      navigator.geolocation.getCurrentPosition(function(position){
+        // console.log(1);
+        // 所有定位信息都在position.coords中 
+
+        //精确度(位置) accuracy 26233
+        //高度(海拔)  altitude 0
+        //高度精确度  altitudeAccuracy null
+        //行进方向    heading NaN
+        //纬度 latitude 39.9065
+        //经度 longitude 116.3876
+        //速度 speed NaN
+        console.log(position.coords);
+      },function(error){
+        console.log(2)
+        console.log(error);
+      }//,{
+        //timeout: 1
+      //}
+      )
+    // 3.获取地理位置信息其实获取的经纬度
+    }else {
+      alert("您的浏览器不支持地理定位,请升级浏览器");
+    }
+
+  </script>
+  <script>
+    if(navigator.geolocation){
+      
+    }
+  </script>
+</body>
+</html>
